@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.yhh.androidexam.imagePicker.ImagePickerActivity
+import com.yhh.androidexam.popup.PopupActivity
 import com.yhh.androidexam.sqlite.SqliteActivity
+import com.yhh.androidexam.sqlite.SqliteHelper
 import com.yhh.androidexam.webView.WebViewActivity
 
 /**
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadImgPickBtn: Button
     lateinit var loadWebViewBtn: Button
     lateinit var loadSqliteBtn: Button
+    lateinit var loadPopupBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +42,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, SqliteActivity::class.java)
             startActivity(intent)
         }
+
+        loadPopupBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, PopupActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
         loadImgPickBtn = findViewById(R.id.loadImgPickBtn)
         loadWebViewBtn = findViewById(R.id.loadWebViewBtn)
         loadSqliteBtn = findViewById(R.id.loadSqliteBtn)
+        loadPopupBtn = findViewById(R.id.loadPopupBtn)
     }
 }

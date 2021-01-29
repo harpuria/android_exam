@@ -85,6 +85,7 @@ class SqliteHelper(context:Context): SQLiteOpenHelper(context, DB_NAME,null, DB_
         // 쓰기 데이터베이스 객체를 얻고..
         val wd = writableDatabase
         // 여기 보면 whereCaluse 인자가 보이는데 SQL 에서 WHERE 절을 말한다, 여기에 조건을 넣어 주면 된다
+        // whereArgs 인자는 지정해야할 조건들이 많을 경우, whereClause 조건의 값을 ? 로 대체한 뒤에 ? 에 들어가야할 값들을 지정해주는 것이다
         val result = wd.update("USER", values, "USER_NO = $userNo", null)
 
         // 마찬가지로 닫고..
@@ -110,5 +111,15 @@ class SqliteHelper(context:Context): SQLiteOpenHelper(context, DB_NAME,null, DB_
     companion object{
         const val DB_VER = 1
         const val DB_NAME = "user.db"
+
+
+        // 이 클래스를 싱글턴으로 활용하기
+        @Volatile private var instance: SqliteHelper? = null
+        fun getInstance(context: Context): SqliteHelper =
+            instance ?: synchronized(this){
+                instance ?: SqliteHelper(context).also {
+                    instance = it
+                }
+            }
     }
 }

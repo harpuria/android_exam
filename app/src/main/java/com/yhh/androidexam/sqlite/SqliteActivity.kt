@@ -29,10 +29,6 @@ class SqliteActivity : AppCompatActivity() {
     lateinit var updateBtn:Button
     lateinit var deleteBtn:Button
 
-    // SQLiteHelper 객체 생성
-    // 다른 곳에서도 이 객체를 사용하기 위해서는 싱글턴 패턴으로 만들면 더 편리할 것이다
-    val helper: SqliteHelper = SqliteHelper(this@SqliteActivity)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sqlite)
@@ -43,7 +39,7 @@ class SqliteActivity : AppCompatActivity() {
             // 여기서 userNo 에 0 은 임의의 아무 값을 준 것이다.
             // Sqlite 에서 INTEGER 타입으로 생성된 PK 는 INSERT 될 떄 자동으로 값이 1씩 증가한다. (autoincrement)
             val user: User = User(0, idEditText.text.toString(), pwEditText.text.toString())
-            val result = helper.insertUser(user)
+            val result = SqliteHelper.getInstance(this@SqliteActivity).insertUser(user)
 
             if(result){
                 Toast.makeText(this@SqliteActivity, "회원 등록 완료", Toast.LENGTH_SHORT).show()
@@ -53,13 +49,13 @@ class SqliteActivity : AppCompatActivity() {
         }
 
         selectBtn.setOnClickListener {
-            val userList = helper.selectUser()
+            val userList = SqliteHelper.getInstance(this@SqliteActivity).selectUser()
             Log.d("SELECT_USER", userList.toString())
         }
 
         updateBtn.setOnClickListener {
             // 예제 편의상 1번 유저만 갱신하는 것으로 처리 (실제 사용할 때 이러면 곤란함)
-            val result = helper.updateUser(1, pwEditText.text.toString())
+            val result = SqliteHelper.getInstance(this@SqliteActivity).updateUser(1, pwEditText.text.toString())
 
             if(result){
                 Toast.makeText(this@SqliteActivity, "비밀번호 갱신 완료", Toast.LENGTH_SHORT).show()
@@ -70,7 +66,7 @@ class SqliteActivity : AppCompatActivity() {
 
         deleteBtn.setOnClickListener {
             // 예제 편의상 1번 유저만 삭제하는 것으로 처리 (실제 사용할 때 이러면 곤란함)
-            val result = helper.deleteUser(1)
+            val result = SqliteHelper.getInstance(this@SqliteActivity).deleteUser(1)
 
             if(result){
                 Toast.makeText(this@SqliteActivity, "회원 삭제 완료", Toast.LENGTH_SHORT).show()
@@ -88,5 +84,13 @@ class SqliteActivity : AppCompatActivity() {
         selectBtn = findViewById(R.id.selectBtn)
         updateBtn = findViewById(R.id.updateBtn)
         deleteBtn = findViewById(R.id.deleteBtn)
+    }
+
+    // 사용이 끝났으면 SqliteHelper 객체 반납
+    // 싱글턴일 때는 사용하는 곳곳 마다 반납 처리해줘야하는가? 
+    // 이건 나도 잘 모르겠다.. 좀 더 알아봐야겠다
+    override fun onDestroy() {
+        super.onDestroy()
+        SqliteHelper.getInstance(this@SqliteActivity).close()
     }
 }
