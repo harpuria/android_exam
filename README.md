@@ -8,3 +8,4 @@ Android Studio 4.1.2 에서 작성하였습니다.
 + WebView
 + SQLite
 + Popup (Dialog, CustomDialog)
++ RecyclerView

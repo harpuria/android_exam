@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidExam"
         android:usesCleartextTraffic="true">
-        <activity android:name=".popup.PopupActivity"></activity>
+        <activity android:name=".recyclerview.RecyclerViewActivity"></activity>
+        <activity android:name=".popup.PopupActivity" />
         <activity android:name=".sqlite.SqliteActivity" />
         <activity android:name=".webView.WebViewActivity" />
         <activity android:name=".imagePicker.ImagePickerActivity" />
