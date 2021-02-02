@@ -12,9 +12,8 @@ import com.yhh.androidexam.R
 
 /**
  *      Recycler View
- *      리스트를 만들어주는 뷰.
+ *      리스트를 만들어주는 뷰 중에 가장 많이 사용하는 뷰
  *      이름에서 보여지듯이 뷰를 재사용하여 성능을 최적화 하였음 (요즘 기기에서는 큰 차이를 체감하기는 사실 어려움)
- *
  */
 
 class RecyclerViewActivity : AppCompatActivity() {

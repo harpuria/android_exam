@@ -14,17 +14,19 @@ import android.widget.Button
 import com.yhh.androidexam.R
 
 /**
-    간단하게 웹뷰 띄워주는 예제
-
-    1) 웹뷰 사용을 위해서는 매니페스트 파일에서 인터넷 사용 권한 추가를 해야 한다.
-       <uses-permission android:name="android.permission.INTERNET"/>
-
-    2) URL 호출 시 ERR_CLEARTEXT_NOT_PERMITTED 이 출력되는 경우
-       매니페스트 파일에 application 요소 안에 아래의 내용을 추가 한다.
-       android:usesCleartextTraffic="true"
-
-    웹뷰 관련해서 참조하기 좋은 블로그
-    https://blog.yena.io/studynote/2020/05/13/Android-WebView.html
+ *       - WebView
+ *      안드로이드 앱에서 웹 페이지를 보여주는 기술
+ *      웹뷰를 띄워서 페이지를 보여주기만 하거나 다양한 설정(javascript 허용, cache 허용 등등)으로 웹뷰를 다룰 수 있다.
+ *
+ *      1) 웹뷰 사용을 위해서는 매니페스트 파일에서 인터넷 사용 권한 추가를 해야 한다.
+ *        <uses-permission android:name="android.permission.INTERNET"/>
+ *
+ *      2) URL 호출 시 ERR_CLEARTEXT_NOT_PERMITTED 이 출력되는 경우
+ *        매니페스트 파일에 application 요소 안에 아래의 내용을 추가 한다.
+ *        android:usesCleartextTraffic="true"
+ *
+ *      웹뷰 관련해서 참조하기 좋은 블로그
+ *      ㄴ https://blog.yena.io/studynote/2020/05/13/Android-WebView.html
  */
 
 class WebViewActivity : AppCompatActivity() {

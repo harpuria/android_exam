@@ -9,11 +9,13 @@ import com.github.drjacky.imagepicker.ImagePicker
 import com.yhh.androidexam.R
 
 /**
-    Image Picker 를 이용하여 이미지 선택
-    많이 사용되는 Drjacky Image Picker 라이브러리 사용
-    해당 라이브러리 의존성 추가 및 상세 정보는 아래 Github 참조
-
-    https://github.com/Drjacky/ImagePicker?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=8208
+ *      - ImagePicker
+ *      사진 및 동영상 등을 선택하기 위한 기능.
+ *      가장 많이 사용되는 Drjacky ImagePicker 라이브러리를 사용.
+ *
+ *      Drjacky ImagePicker 공식 문서
+ *      ㄴ https://github.com/Drjacky/ImagePicker?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=8208
+ *
  */
 
 class ImagePickerActivity : AppCompatActivity() {

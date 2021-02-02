@@ -7,6 +7,7 @@ import android.widget.Button
 import com.yhh.androidexam.imagePicker.ImagePickerActivity
 import com.yhh.androidexam.popup.PopupActivity
 import com.yhh.androidexam.recyclerview.RecyclerViewActivity
+import com.yhh.androidexam.retrofit.RetrofitActivity
 import com.yhh.androidexam.sqlite.SqliteActivity
 import com.yhh.androidexam.sqlite.SqliteHelper
 import com.yhh.androidexam.webView.WebViewActivity
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadSqliteBtn: Button
     lateinit var loadPopupBtn: Button
     lateinit var loadRecyclerViewBtn: Button
+    lateinit var loadRetrofitBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +56,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, RecyclerViewActivity::class.java)
             startActivity(intent)
         }
+
+        loadRetrofitBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, RetrofitActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -62,5 +69,6 @@ class MainActivity : AppCompatActivity() {
         loadSqliteBtn = findViewById(R.id.loadSqliteBtn)
         loadPopupBtn = findViewById(R.id.loadPopupBtn)
         loadRecyclerViewBtn = findViewById(R.id.loadRecyclerViewBtn)
+        loadRetrofitBtn = findViewById(R.id.loadRetrofitBtn)
     }
 }
