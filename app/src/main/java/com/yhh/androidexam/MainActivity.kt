@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.yhh.androidexam.fragment.FragmentActivity
 import com.yhh.androidexam.imagePicker.ImagePickerActivity
 import com.yhh.androidexam.popup.PopupActivity
 import com.yhh.androidexam.recyclerview.RecyclerViewActivity
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadPopupBtn: Button
     lateinit var loadRecyclerViewBtn: Button
     lateinit var loadRetrofitBtn: Button
+    lateinit var loadFragmentBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +63,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, RetrofitActivity::class.java)
             startActivity(intent)
         }
+
+        loadFragmentBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, FragmentActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -70,5 +77,6 @@ class MainActivity : AppCompatActivity() {
         loadPopupBtn = findViewById(R.id.loadPopupBtn)
         loadRecyclerViewBtn = findViewById(R.id.loadRecyclerViewBtn)
         loadRetrofitBtn = findViewById(R.id.loadRetrofitBtn)
+        loadFragmentBtn = findViewById(R.id.loadFragmentBtn)
     }
 }
