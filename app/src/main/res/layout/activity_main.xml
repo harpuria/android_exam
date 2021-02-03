@@ -50,7 +50,7 @@
         android:id="@+id/loadRecyclerViewBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="RecyclerView"
+        android:text="Recycler View"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,4 +75,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loadRetrofitBtn" />
+
+    <Button
+        android:id="@+id/loadViewPagerBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Pager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadFragmentBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

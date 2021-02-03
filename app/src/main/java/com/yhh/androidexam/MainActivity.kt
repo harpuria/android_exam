@@ -11,6 +11,7 @@ import com.yhh.androidexam.recyclerview.RecyclerViewActivity
 import com.yhh.androidexam.retrofit.RetrofitActivity
 import com.yhh.androidexam.sqlite.SqliteActivity
 import com.yhh.androidexam.sqlite.SqliteHelper
+import com.yhh.androidexam.viewpager.ViewPagerActivity
 import com.yhh.androidexam.webView.WebViewActivity
 
 /**
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadRecyclerViewBtn: Button
     lateinit var loadRetrofitBtn: Button
     lateinit var loadFragmentBtn: Button
+    lateinit var loadViewPagerBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +70,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, FragmentActivity::class.java)
             startActivity(intent)
         }
+
+        loadViewPagerBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, ViewPagerActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -78,5 +85,6 @@ class MainActivity : AppCompatActivity() {
         loadRecyclerViewBtn = findViewById(R.id.loadRecyclerViewBtn)
         loadRetrofitBtn = findViewById(R.id.loadRetrofitBtn)
         loadFragmentBtn = findViewById(R.id.loadFragmentBtn)
+        loadViewPagerBtn = findViewById(R.id.loadViewPagerBtn)
     }
 }
