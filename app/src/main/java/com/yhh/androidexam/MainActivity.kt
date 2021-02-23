@@ -10,6 +10,7 @@ import com.yhh.androidexam.permission.PermissionActivity
 import com.yhh.androidexam.popup.PopupActivity
 import com.yhh.androidexam.recyclerview.RecyclerViewActivity
 import com.yhh.androidexam.retrofit.RetrofitActivity
+import com.yhh.androidexam.sharedpreferences.SharedPreferencesActivity
 import com.yhh.androidexam.sqlite.SqliteActivity
 import com.yhh.androidexam.sqlite.SqliteHelper
 import com.yhh.androidexam.viewpager.ViewPagerActivity
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadFragmentBtn: Button
     lateinit var loadViewPagerBtn: Button
     lateinit var loadPermission: Button
+    lateinit var loadSharedpreferences: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +84,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, PermissionActivity::class.java)
             startActivity(intent)
         }
+
+        loadSharedpreferences.setOnClickListener {
+            val intent = Intent(this@MainActivity, SharedPreferencesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -94,5 +101,6 @@ class MainActivity : AppCompatActivity() {
         loadFragmentBtn = findViewById(R.id.loadFragmentBtn)
         loadViewPagerBtn = findViewById(R.id.loadViewPagerBtn)
         loadPermission = findViewById(R.id.loadPermission)
+        loadSharedpreferences = findViewById(R.id.loadSharedpreferences)
     }
 }

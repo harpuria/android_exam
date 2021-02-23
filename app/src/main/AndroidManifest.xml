@@ -3,7 +3,7 @@
     package="com.yhh.androidexam">
     <!-- 권 한 설 정 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidExam"
         android:usesCleartextTraffic="true">
-        <activity android:name=".permission.PermissionActivity"></activity>
+        <activity android:name=".sharedpreferences.SharedPreferencesActivity"></activity>
+        <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".fragment.FragmentActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
