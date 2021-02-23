@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.yhh.androidexam.fragment.FragmentActivity
 import com.yhh.androidexam.imagePicker.ImagePickerActivity
+import com.yhh.androidexam.permission.PermissionActivity
 import com.yhh.androidexam.popup.PopupActivity
 import com.yhh.androidexam.recyclerview.RecyclerViewActivity
 import com.yhh.androidexam.retrofit.RetrofitActivity
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadRetrofitBtn: Button
     lateinit var loadFragmentBtn: Button
     lateinit var loadViewPagerBtn: Button
+    lateinit var loadPermission: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +77,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ViewPagerActivity::class.java)
             startActivity(intent)
         }
+
+        loadPermission.setOnClickListener {
+            val intent = Intent(this@MainActivity, PermissionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -86,5 +93,6 @@ class MainActivity : AppCompatActivity() {
         loadRetrofitBtn = findViewById(R.id.loadRetrofitBtn)
         loadFragmentBtn = findViewById(R.id.loadFragmentBtn)
         loadViewPagerBtn = findViewById(R.id.loadViewPagerBtn)
+        loadPermission = findViewById(R.id.loadPermission)
     }
 }

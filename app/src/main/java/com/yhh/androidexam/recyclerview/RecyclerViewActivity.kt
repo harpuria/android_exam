@@ -36,6 +36,10 @@ class RecyclerViewActivity : AppCompatActivity() {
         val adapter = RecyclerViewAdapter()
         adapter.dataList = tempList
         recyclerView.adapter = adapter
+        // 리사이클러 뷰에는 세가지 레이아웃 매니저를 사용할 수 있다
+        // LinearLayoutManager : 세로(기본), 가로 배치 레이아웃
+        // GridLayoutManager : 데이터의 사이즈에 따라 그리드의 크기가 결정됨. 한 줄에 몇개의 아이템을 표시할 것인지 지정 가능
+        // StaggeredGridLayoutManager : 컨텍스트를 사용하지 않는 레이아웃. 리니어와 유사하지만 가로, 세로의 아이템 표시 갯수를 자유롭게 지정할 수 있다.
         recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
 
     }
