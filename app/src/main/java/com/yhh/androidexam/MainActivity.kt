@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.yhh.androidexam.camera.CameraActivity
 import com.yhh.androidexam.fragment.FragmentActivity
 import com.yhh.androidexam.imagePicker.ImagePickerActivity
 import com.yhh.androidexam.permission.PermissionActivity
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loadViewPagerBtn: Button
     lateinit var loadPermission: Button
     lateinit var loadSharedpreferences: Button
+    lateinit var loadCamera: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,6 +91,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, SharedPreferencesActivity::class.java)
             startActivity(intent)
         }
+
+        loadCamera.setOnClickListener {
+            val intent = Intent(this@MainActivity, CameraActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun initView(){
@@ -102,5 +109,6 @@ class MainActivity : AppCompatActivity() {
         loadViewPagerBtn = findViewById(R.id.loadViewPagerBtn)
         loadPermission = findViewById(R.id.loadPermission)
         loadSharedpreferences = findViewById(R.id.loadSharedpreferences)
+        loadCamera = findViewById(R.id.loadCamera)
     }
 }
